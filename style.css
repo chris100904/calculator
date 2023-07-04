@@ -1,0 +1,107 @@
+
+body{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    height: 525px;
+    border-radius: 20px;
+    flex: 1 0 1;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+}
+
+.previous{
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    font-size: 25px;
+}
+
+.content{
+    font-size: 50px;
+}
+
+.previous, .content{
+    height: 50%;
+    background: rgb(65, 65, 65);
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    align-items: end;
+    flex: 1;
+    color: white;
+    padding: 0px 5px 5px 5px;
+}
+
+.display{
+    /* background: rgb(65, 65, 65);
+    width: 100%;
+    height: 150px;
+
+    color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    align-items: end;
+    font-size: 36px;
+    flex: 1 1 1;
+    height: 50% */
+    display: flex;
+    flex-direction: column;
+    height: 150px;
+    font-size: 36px;
+    width: 100%;
+}
+
+.double{
+    width: 200px;
+}
+
+.single, .operator, .number{
+    width: 100px;
+}
+
+.number, #decimal, #zero{
+    background: rgb(184, 181, 181);
+}
+
+.operator{
+    background: orange;
+}
+
+.buttons{
+    display: flex;
+    flex-flow: wrap row;
+}
+
+button{
+    height: 75px;
+    border: black solid 0.5px;
+    color: white;
+    font-size: 32px;
+    font-weight: lighter;
+    transition-duration: 0.2s;
+}
+
+button:hover{
+    filter: brightness(92%);
+}
+
+#zero{
+    border-bottom-left-radius: 20px;
+    border: black solid 0.5px;
+}
+
+#equal{
+    border-bottom-right-radius: 20px;
+    border: black solid 0.5px;
+}
+
+#clear, #negative{
+    background: rgb(123, 118, 118);
+}
