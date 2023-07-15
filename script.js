@@ -3,29 +3,43 @@ let secondNum = ""
 let operation;
 let getFirstNum = true;
 let result;
+let selectedButton; 
+let isZero = false;
 
-const buttons = document.querySelectorAll('.number, .operator, .single, .double');
+const buttons = document.querySelectorAll('.number, .operator, .clear, .negative, .equal');
 const display = document.querySelector('.display');
 const content = document.querySelector('.display .content');
 
 buttons.forEach((button) => {
     button.addEventListener("click", function() {
+        selectedButton = button.className;
         switch (button.className) {
             case "number":
-                if (getFirstNum){
-                    firstNum += button.textContent;
-                    updateDisplay();
+                if (!isZero){
+                    if (getFirstNum){
+                        firstNum += button.textContent;
+                        updateDisplay();
+                        if (Number(firstNum) == 0){
+                            isZero = true;
+                        }
+                    }
+                    else{
+                        secondNum += button.textContent;
+                        updateDisplay();
+                        if (Number(secondNum) == 0){
+                            isZero = true;
+                        }
+                    }
+                    adjustFontSize();
+                    break;
                 }
-                else{
-                    secondNum += button.textContent;
-                    updateDisplay();
-                }
-                adjustFontSize();
-                break;
+            // case "decimal":
+            //     if 
             case "operator":
                 // extra function for when secondNum exists but new operator is selected
                 operation = button.id;
                 getFirstNum = false;
+                isZero = false;
                 // clearDisplay();
                 break;
             case "equal":
@@ -43,51 +57,42 @@ buttons.forEach((button) => {
                         result = divide(firstNum, secondNum);
                         break;
                 }
-                // content.textContent += result;
+                content.textContent = result;
+                firstNum = String(result);
+                secondNum = "";
+                break;
         }
     })
 });
 
 function add(a, b) {
-  return a + b;
+  return Number(a) + Number(b);
 }
 
 function subtract(a, b) {
-  return a - b;
+  return Number(a) - Number(b);
 }
 
 function multiply(a, b) {
-  return a * b;
+  return Number(a) * Number(b);
 }
 
 function divide(a, b) {
-  return a / b;
-}
-
-function operate(a, b, operator) {
-  switch (operator) {
-    case "+":
-      add(a, b);
-      break;
-    case "-":
-      subtract(a, b);
-      break;
-    case "*":
-      multiply(a, b);
-      break;
-    case "/":
-      divide(a, b);
-      break;
-  }
+  return Number(a) / Number(b);
 }
 
 function updateDisplay(){
-    if (getFirstNum){
-        content.textContent = firstNum;
+    if (!isZero){
+        if (getFirstNum){
+            content.textContent = firstNum;
+        }
+        else{
+            content.textContent = secondNum;
+        }
     }
-    else{
-        content.textContent = secondNum;
-    }
+        // if (content.textContent = "0"){
+        //     isZero = true;
+        // }
 }
 
 function clearDisplay(){
