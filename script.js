@@ -19,9 +19,6 @@ buttons.forEach((button) => {
       case "number":
         handleNumberInput(button.textContent);
         break;
-
-      // case "decimal":
-      //     if
       case "operator":
         handleOperatorInput(button.id);
         break;
@@ -37,6 +34,16 @@ buttons.forEach((button) => {
       case "decimal":
         handleDecimal();
         break;
+    case "negative":
+        if (content.textContent !== ""){
+            if (getFirstNum){
+                firstNum = String(Number(firstNum) * -1);
+            }
+            else {
+                secondNum = String(Number(secondNum) * -1);
+            }
+            updateDisplay();
+        }    
     }
   });
 });
@@ -96,19 +103,13 @@ function updateDisplay() {
       content.textContent = secondNum;
     }
   }
-  // if (content.textContent = "0"){
-  //     isZero = true;
-  // }
 }
 
 function clearDisplay() {
-  // need to add something to only clear the bottom row when top row is storing previous operation
-  // think of the logic
   content.textContent = "";
 }
 
 function adjustFontSize() {
-  // Reduce font size until content fits within the display
   while (content.offsetWidth > display.offsetWidth) {
     const fontSize = parseFloat(getComputedStyle(content).fontSize);
     content.style.fontSize = fontSize - 1 + "px";
