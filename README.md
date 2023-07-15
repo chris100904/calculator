@@ -3,7 +3,7 @@ This is a simple project that is replicating the Apple calculator app with sligh
 
 There are still some bugs left that have not been dealt with. These have to do with some logic of the calculator and inputting numbers during or after operations have been made. Regardless, the calculator is mostly functional.
 
-Live preview:
+Live preview: https://chris100904.github.io/calculator/
 
 Skills learned:
 - Utilizing key listeners
