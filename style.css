@@ -1,86 +1,118 @@
-
-body{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-}
-.container{
-    display: flex;
-    flex-direction: column;
-    width: 400px;
-    height: 525px;
-    border-radius: 20px;
-    flex: 1 0 1;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+html {
+  font-family: "Exo 2", sans-serif;
 }
 
-.content, .previous{
-    padding: 0px 5px 5px 0px;
-    height: 75px;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: end;
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
-.display{
-    background: rgb(65, 65, 65);
-    width: 100%;
-    height: 150px;
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
-    color: white;
-    display: flex;
-    flex-direction: column;
-    justify-content: end;
-    align-items: end;
-    font-size: 36px;
+.header {
+  font-size: 64px;
 }
 
-.clear, #zero{
-    width: 200px;
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  height: 525px;
+  border-radius: 20px;
+  flex: 1 0 1;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
-.negative, .decimal, .operator, .number, .equal{
-    width: 100px;
+.content,
+.previous {
+  padding: 0px 5px 5px 0px;
+  height: 75px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: end;
+}
+.display {
+  background: rgb(65, 65, 65);
+  width: 100%;
+  height: 150px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  align-items: end;
+  font-size: 36px;
 }
 
-.number, #decimal, #zero{
-    background: rgb(184, 181, 181);
+.clear,
+#zero {
+  width: 200px;
 }
 
-.operator, .equal{
-    background: orange;
+.negative,
+.decimal,
+.operator,
+.number,
+.equal {
+  width: 100px;
 }
 
-.buttons{
-    display: flex;
-    flex-flow: wrap row;
+.number,
+#decimal,
+#zero {
+  background: rgb(184, 181, 181);
 }
 
-button{
-    height: 75px;
-    border: black solid 0.5px;
-    color: white;
-    font-size: 32px;
-    font-weight: lighter;
-    transition-duration: 0.2s;
+.operator,
+.equal {
+  background: orange;
 }
 
-button:hover{
-    filter: brightness(92%);
+.buttons {
+  display: flex;
+  flex-flow: wrap row;
 }
 
-#zero{
-    border-bottom-left-radius: 20px;
-    border: black solid 0.5px;
+button {
+  height: 75px;
+  border: black solid 0.5px;
+  color: white;
+  font-size: 32px;
+  font-weight: lighter;
+  transition-duration: 0.2s;
 }
 
-#equal{
-    border-bottom-right-radius: 20px;
-    border: black solid 0.5px;
+button:hover {
+  filter: brightness(92%);
 }
 
-#clear, #negative{
-    background: rgb(123, 118, 118);
+#zero {
+  border-bottom-left-radius: 20px;
+  border: black solid 0.5px;
+}
+
+#equal {
+  border-bottom-right-radius: 20px;
+  border: black solid 0.5px;
+}
+
+#clear,
+#negative {
+  background: rgb(123, 118, 118);
+}
+
+.footer {
+  display: flex;
+  padding: 16px 0px;
+  position: fixed;
+  justify-content: center;
+  align-content: center;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }
